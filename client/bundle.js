@@ -18967,17 +18967,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var headerContainerStyle = {
     borderStyle: "solid",
-    borderColor: "black",
+    borderColor: "#FA6E59",
     height: 200,
+    borderWidth: 5,
     textAlign: "center",
-    borderRadius: 5
+    borderRadius: 5,
+    backgroundColor: "#4897D8"
 };
 
 var headerH1Style = {
     textAlign: "center",
     height: 200,
-    paddingTop: 55,
-    letterSpacing: 15
+    paddingTop: 50,
+    letterSpacing: 10,
+    color: "#FFDB5C",
+    fontSize: 50
 };
 
 var Header = function Header() {
