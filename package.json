@@ -10,16 +10,18 @@
     "ejs": "^2.5.7",
     "express": "^4.16.2",
     "mongoose": "^5.0.0",
+    "morgan": "^1.9.0",
     "nodemon": "^1.14.11",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.0",
     "react-dom": "^16.2.0",
     "react-modal": "^3.1.11",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "1.1.0"
+    "react-scripts": "1.1.0",
+    "webpack": "^3.10.0"
   },
   "scripts": {
-    "webpack": "webpack",
-    "start": "npm run webpack && nodemon --exec babel-node -- bin/www"
+    "start": "nodemon --ignore './public/' ./bin/www & nodemon --ignore './public/' --exec 'yarn webpack'",
+    "webpack": "webpack --config webpack.config.js"
   }
 }
