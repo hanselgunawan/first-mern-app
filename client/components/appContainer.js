@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
+import Search from "./Search";
 
 class AppContainer extends Component {
     // state = {
@@ -12,6 +13,7 @@ class AppContainer extends Component {
         return (
             <div>
                 <Header/>
+                <Search/>
             </div>
         );
     }

@@ -65,6 +65,21 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(15);
+} else {
+  module.exports = __webpack_require__(16);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -254,21 +269,6 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(15);
-} else {
-  module.exports = __webpack_require__(16);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -429,7 +429,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 5 */
@@ -489,7 +489,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
@@ -558,7 +558,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 7 */
@@ -625,7 +625,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 8 */
@@ -745,7 +745,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 10 */
@@ -940,7 +940,7 @@ module.exports = focusNode;
 "use strict";
 
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -2347,7 +2347,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 17 */
@@ -2412,7 +2412,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(22);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 19 */
@@ -2431,7 +2431,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(4);
+var aa=__webpack_require__(0),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(4);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2728,7 +2728,7 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(1);
+var React = __webpack_require__(0);
 var invariant = __webpack_require__(5);
 var warning = __webpack_require__(6);
 var ExecutionEnvironment = __webpack_require__(8);
@@ -18106,7 +18106,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 23 */
@@ -18275,7 +18275,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -18900,13 +18900,17 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 var _Header = __webpack_require__(34);
 
 var _Header2 = _interopRequireDefault(_Header);
+
+var _Search = __webpack_require__(35);
+
+var _Search2 = _interopRequireDefault(_Search);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18938,7 +18942,8 @@ var AppContainer = function (_Component) {
             return _react2.default.createElement(
                 "div",
                 null,
-                _react2.default.createElement(_Header2.default, null)
+                _react2.default.createElement(_Header2.default, null),
+                _react2.default.createElement(_Search2.default, null)
             );
         }
     }]);
@@ -18959,7 +18964,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _react = __webpack_require__(1);
+var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -19003,6 +19008,202 @@ var Header = function Header() {
 };
 
 exports.default = Header;
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SearchPanel = __webpack_require__(36);
+
+var _SearchPanel2 = _interopRequireDefault(_SearchPanel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var margin = {
+    marginTop: 15
+};
+
+var paddingNone = {
+    paddingLeft: 0,
+    paddingRight: 0
+};
+
+var Search = function Search() {
+    return _react2.default.createElement(
+        "div",
+        { className: "row", style: margin },
+        _react2.default.createElement("div", { className: "col-lg-2" }),
+        _react2.default.createElement(
+            "div",
+            { className: "col-lg-8", style: paddingNone },
+            _react2.default.createElement(_SearchPanel2.default, null)
+        ),
+        _react2.default.createElement("div", { className: "col-lg-2" })
+    );
+};
+
+exports.default = Search;
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SearchPanelForm = __webpack_require__(37);
+
+var _SearchPanelForm2 = _interopRequireDefault(_SearchPanelForm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var panelContainerStyle = {
+    borderStyle: "solid",
+    borderColor: "#FA6E59",
+    borderWidth: 2,
+    borderRadius: 5
+};
+
+var panelHeadingStyle = {
+    color: "#FFDB5C",
+    fontSize: 18,
+    letterSpacing: 2,
+    backgroundColor: "#4897D8"
+};
+
+var SearchPanel = function SearchPanel() {
+    return _react2.default.createElement(
+        "div",
+        { className: "panel panel-primary", style: panelContainerStyle },
+        _react2.default.createElement(
+            "div",
+            { className: "panel-heading", style: panelHeadingStyle },
+            "Search Parameters"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "panel-body" },
+            _react2.default.createElement(_SearchPanelForm2.default, null)
+        )
+    );
+};
+
+exports.default = SearchPanel;
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchPanelForm = function SearchPanelForm() {
+    return _react2.default.createElement(
+        "form",
+        { role: "form" },
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "search" },
+                "Search Term:"
+            ),
+            _react2.default.createElement("input", { type: "text", className: "form-control", itemID: "search-term" })
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "pwd" },
+                "Number of Records to Retrieve:"
+            ),
+            _react2.default.createElement(
+                "select",
+                { className: "form-control", itemID: "num-records-select" },
+                _react2.default.createElement(
+                    "option",
+                    { value: "1" },
+                    "1"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "5", selected: true },
+                    "5"
+                ),
+                _react2.default.createElement(
+                    "option",
+                    { value: "10" },
+                    "10"
+                )
+            )
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "start-year" },
+                "Start Year (Optional):"
+            ),
+            _react2.default.createElement("input", { type: "text", className: "form-control", itemID: "start-year" })
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "end-year" },
+                "End Year (Optional):"
+            ),
+            _react2.default.createElement("input", { type: "text", className: "form-control", itemID: "end-year" })
+        ),
+        _react2.default.createElement(
+            "button",
+            { type: "submit", className: "btn btn-default", itemID: "run-search" },
+            _react2.default.createElement("i", { className: "fa fa-search" }),
+            " Search"
+        ),
+        _react2.default.createElement(
+            "button",
+            { type: "button", className: "btn btn-default", itemID: "clear-all" },
+            _react2.default.createElement("i", { className: "fa fa-trash" }),
+            " Clear Results"
+        )
+    );
+};
+
+exports.default = SearchPanelForm;
 
 /***/ })
 /******/ ]);
