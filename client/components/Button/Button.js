@@ -5,13 +5,17 @@ let style = {
         {
             marginRight:5,
             color:"#FFDB5C",
-            backgroundColor:"#4897D8"
+            backgroundColor:"#4897D8",
+            paddingLeft: 15,
+            paddingRight: 15
         },
     clearAll:
         {
             marginRight:5,
             color:"#FA6E59",
-            backgroundColor:"#FFDB5C"
+            backgroundColor:"#FFDB5C",
+            paddingLeft: 15,
+            paddingRight: 15
         }
 };
 

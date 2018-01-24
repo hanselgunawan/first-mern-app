@@ -15,11 +15,17 @@ let panelHeadingStyle = {
     backgroundColor:"#4897D8"
 };
 
-const SearchPanel = () =>
+const SearchPanel = props =>
     <div className="panel panel-primary" style={panelContainerStyle}>
         <div className="panel-heading" style={panelHeadingStyle}>Search Parameters</div>
         <div className="panel-body">
-            <SearchPanelForm/>
+            <SearchPanelForm
+                search={props.search}
+                numOfArticles={props.numOfArticles}
+                startYear={props.startYear}
+                endYear={props.endYear}
+                handleInputChange={props.handleInputChange}
+            />
         </div>
     </div>
 
