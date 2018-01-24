@@ -10,12 +10,14 @@ let paddingNone = {
     paddingRight:0
 };
 
-const Results = () =>
+const Results = props =>
     <div className="row" style={margin}>
         <div className="col-lg-2">
         </div>
         <div className="col-lg-8" style={paddingNone}>
-            <ResultsPanel/>
+            <ResultsPanel
+                result={props.results}
+            />
         </div>
         <div className="col-lg-2">
         </div>

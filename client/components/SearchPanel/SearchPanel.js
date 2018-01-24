@@ -25,6 +25,7 @@ const SearchPanel = props =>
                 startYear={props.startYear}
                 endYear={props.endYear}
                 handleInputChange={props.handleInputChange}
+                handleSearchButton={props.handleSearchButton}
             />
         </div>
     </div>

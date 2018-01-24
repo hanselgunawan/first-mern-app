@@ -16,13 +16,15 @@ let panelNumberStyle = {
     marginRight:10
 };
 
-const ResultsWell = () =>
-        <div className="well">
-            <h3 className="articleHeadline"><span className="label label-primary" style={panelNumberStyle}>1</span>
-                <a href="#"><strong> Applying a ‘Reality Test’ on Congestion Pricing</strong></a>
-                <button className="btn btn-primary" style={panelSaveBtn}>Save</button>
-            </h3>
-            <h5><strong>Publication Date:</strong> 02/10/2017</h5>
-        </div>
+const ResultsWell = props =>
+        {props.results.map(data =>
+            <div className="well">
+                <h3 className="articleHeadline"><span className="label label-primary" style={panelNumberStyle}>1</span>
+                    <a href="#"><strong> Applying a ‘Reality Test’ on Congestion Pricing</strong></a>
+                    <button className="btn btn-primary" style={panelSaveBtn}>Save</button>
+                </h3>
+                <h5><strong>Publication Date:</strong> 02/10/2017</h5>
+            </div>
+        )}
 
 export default ResultsWell;

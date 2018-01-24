@@ -54,6 +54,7 @@ const SearchPanelForm = props =>
             btnClass="btn btn-default"
             btnID="run-search"
             btnText="Search"
+            handleSearchButton={props.handleSearchButton}
         />
         <Button
             btnType="button"

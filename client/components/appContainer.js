@@ -20,10 +20,15 @@ class AppContainer extends Component {
         this.setState({
             [name]: value
         });
+        console.log("SEARCH: " + this.state.search);
+        console.log("NUM OF ARTICLES: " + this.state.numOfArticles);
     };
 
     grabArticles = (searchQuery, startYear, endYear) => {
-        API.search()
+        API.search(searchQuery, startYear, endYear)
+            .then(res => this.setState({ results: res.data.data }))
+            .catch(err => console.log(err));
+        console.log(this.state.results);
     };
 
     handleSearchButton = event => {
@@ -41,8 +46,11 @@ class AppContainer extends Component {
                     startYear={this.state.startYear}
                     endYear={this.state.endYear}
                     handleInputChange={this.handleInputChange}
+                    handleSearchButton={this.handleSearchButton}
                 />
-                <Results/>
+                <Results
+                    results={this.state.results}
+                />
                 <SavedArticles/>
             </div>
         );

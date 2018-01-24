@@ -21,6 +21,7 @@ const Search = props =>
                 startYear={props.startYear}
                 endYear={props.endYear}
                 handleInputChange={props.handleInputChange}
+                handleSearchButton={props.handleSearchButton}
             />
         </div>
         <div className="col-lg-2">
