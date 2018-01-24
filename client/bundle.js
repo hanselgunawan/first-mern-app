@@ -19124,6 +19124,10 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Button = __webpack_require__(38);
+
+var _Button2 = _interopRequireDefault(_Button);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SearchPanelForm = function SearchPanelForm() {
@@ -19188,22 +19192,62 @@ var SearchPanelForm = function SearchPanelForm() {
             ),
             _react2.default.createElement("input", { type: "text", className: "form-control", itemID: "end-year" })
         ),
-        _react2.default.createElement(
-            "button",
-            { type: "submit", className: "btn btn-default", itemID: "run-search" },
-            _react2.default.createElement("i", { className: "fa fa-search" }),
-            " Search"
-        ),
-        _react2.default.createElement(
-            "button",
-            { type: "button", className: "btn btn-default", itemID: "clear-all" },
-            _react2.default.createElement("i", { className: "fa fa-trash" }),
-            " Clear Results"
-        )
+        _react2.default.createElement(_Button2.default, {
+            btnType: "submit",
+            btnClass: "btn btn-default",
+            btnID: "run-search",
+            btnText: "Search"
+        }),
+        _react2.default.createElement(_Button2.default, {
+            btnType: "button",
+            btnClass: "btn btn-default",
+            btnID: "clear-all",
+            btnText: "Clear Results"
+        })
     );
 };
 
 exports.default = SearchPanelForm;
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var style = {
+    submit: {
+        marginRight: 5,
+        color: "#FFDB5C",
+        backgroundColor: "#4897D8"
+    },
+    clearAll: {
+        marginRight: 5,
+        color: "#FA6E59",
+        backgroundColor: "#FFDB5C"
+    }
+};
+
+var Button = function Button(props) {
+    return _react2.default.createElement(
+        "button",
+        { style: props.btnType === "submit" ? style.submit : style.clearAll, type: props.btnType, className: props.btnClass, itemID: props.btnID },
+        props.btnText
+    );
+};
+
+exports.default = Button;
 
 /***/ })
 /******/ ]);

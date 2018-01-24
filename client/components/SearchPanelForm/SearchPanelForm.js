@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button/Button";
 
 const SearchPanelForm = () =>
     <form role="form">
@@ -22,8 +23,18 @@ const SearchPanelForm = () =>
             <label htmlFor="end-year">End Year (Optional):</label>
             <input type="text" className="form-control" itemID="end-year"/>
         </div>
-        <button type="submit" className="btn btn-default" itemID="run-search"><i className="fa fa-search"></i> Search</button>
-        <button type="button" className="btn btn-default" itemID="clear-all"><i className="fa fa-trash"></i> Clear Results</button>
+        <Button
+            btnType="submit"
+            btnClass="btn btn-default"
+            btnID="run-search"
+            btnText="Search"
+        />
+        <Button
+            btnType="button"
+            btnClass="btn btn-default"
+            btnID="clear-all"
+            btnText="Clear Results"
+        />
     </form>
 
 export default SearchPanelForm;
