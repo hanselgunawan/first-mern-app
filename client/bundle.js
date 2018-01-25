@@ -19673,19 +19673,25 @@ var AppContainer = function (_Component) {
             var value = event.target.value;
             _this.setState(_defineProperty({}, name, value));
             console.log("SEARCH: " + _this.state.search);
+            console.log("START YEAR: " + _this.state.startYear);
+            console.log("END YEAR: " + _this.state.endYear);
             console.log("NUM OF ARTICLES: " + _this.state.numOfArticles);
         }, _this.grabArticles = function (searchQuery, startYear, endYear) {
             _API2.default.search(searchQuery, startYear, endYear).then(function (res) {
-                return _this.setState({ results: res.data.data });
-            }).catch(function (err) {
+                return _this.setState({ results: res.data.response.docs });
+            }).then(console.log(_this.state.results)).catch(function (err) {
                 return console.log(err);
             });
-            console.log(_this.state.results);
         }, _this.handleSearchButton = function (event) {
             event.preventDefault();
             _this.grabArticles(_this.state.search, _this.state.startYear, _this.state.endYear);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
+
+    // componentDidMount() {
+    //     this.grabArticles("tech", 2000, 2012);
+    //     console.log(this.state.results);
+    // }
 
     _createClass(AppContainer, [{
         key: "render",

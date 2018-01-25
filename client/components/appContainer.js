@@ -14,6 +14,11 @@ class AppContainer extends Component {
         results:[]
     };
 
+    // componentDidMount() {
+    //     this.grabArticles("tech", 2000, 2012);
+    //     console.log(this.state.results);
+    // }
+
     handleInputChange = event => {
         let name = event.target.name;
         let value = event.target.value;
@@ -21,14 +26,16 @@ class AppContainer extends Component {
             [name]: value
         });
         console.log("SEARCH: " + this.state.search);
+        console.log("START YEAR: " + this.state.startYear);
+        console.log("END YEAR: " + this.state.endYear);
         console.log("NUM OF ARTICLES: " + this.state.numOfArticles);
     };
 
     grabArticles = (searchQuery, startYear, endYear) => {
         API.search(searchQuery, startYear, endYear)
-            .then(res => this.setState({ results: res.data.data }))
+            .then(res => this.setState({ results: res.data.response.docs }))
+            .then(console.log(this.state.results))
             .catch(err => console.log(err));
-        console.log(this.state.results);
     };
 
     handleSearchButton = event => {
