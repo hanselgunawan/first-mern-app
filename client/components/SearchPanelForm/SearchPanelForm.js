@@ -14,20 +14,6 @@ const SearchPanelForm = props =>
             />
         </div>
         <div className="form-group">
-            <label htmlFor="pwd">Number of Records to Retrieve:</label>
-            <select
-                className="form-control"
-                itemID="num-records-select"
-                name="numOfArticles"
-                value={props.numOfArticles}
-                onChange={props.handleInputChange}
-            >
-                <option value="1">1</option>
-                <option value="5" selected>5</option>
-                <option value="10">10</option>
-            </select>
-        </div>
-        <div className="form-group">
             <label htmlFor="start-year">Start Year (Optional):</label>
             <input
                 type="text"
@@ -61,6 +47,7 @@ const SearchPanelForm = props =>
             btnClass="btn btn-default"
             btnID="clear-all"
             btnText="Clear Results"
+            handleClearSearchButton={props.handleClearSearchButton}
         />
     </form>
 

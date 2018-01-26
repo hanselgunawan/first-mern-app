@@ -21,11 +21,11 @@ const SearchPanel = props =>
         <div className="panel-body">
             <SearchPanelForm
                 search={props.search}
-                numOfArticles={props.numOfArticles}
                 startYear={props.startYear}
                 endYear={props.endYear}
                 handleInputChange={props.handleInputChange}
                 handleSearchButton={props.handleSearchButton}
+                handleClearSearchButton={props.handleClearSearchButton}
             />
         </div>
     </div>

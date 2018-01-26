@@ -17,11 +17,11 @@ const Search = props =>
         <div className="col-lg-8" style={paddingNone}>
             <SearchPanel
                 search={props.search}
-                numOfArticles={props.numOfArticles}
                 startYear={props.startYear}
                 endYear={props.endYear}
                 handleInputChange={props.handleInputChange}
                 handleSearchButton={props.handleSearchButton}
+                handleClearSearchButton={props.handleClearSearchButton}
             />
         </div>
         <div className="col-lg-2">

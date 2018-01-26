@@ -16,7 +16,7 @@ const Results = props =>
         </div>
         <div className="col-lg-8" style={paddingNone}>
             <ResultsPanel
-                result={props.results}
+                results={props.results}
             />
         </div>
         <div className="col-lg-2">

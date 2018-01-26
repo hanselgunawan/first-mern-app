@@ -20,6 +20,6 @@ let style = {
 };
 
 const Button = props =>
-    <button onClick={props.btnType === "submit" ? props.handleSearchButton : props.handleSearchButton} style={props.btnType === "submit" ? style.submit : style.clearAll} type={props.btnType} className={props.btnClass} itemID={props.btnID}>{props.btnText}</button>
+    <button onClick={props.btnType === "submit" ? props.handleSearchButton : props.handleClearSearchButton} style={props.btnType === "submit" ? style.submit : style.clearAll} type={props.btnType} className={props.btnClass} itemID={props.btnID}>{props.btnText}</button>
 
 export default Button;

@@ -8,16 +8,21 @@ import API from "../utils/API";
 class AppContainer extends Component {
     state = {
         search: "",
-        numOfArticles: 0,
         startYear:0,
         endYear:0,
         results:[]
     };
 
-    // componentDidMount() {
-    //     this.grabArticles("tech", 2000, 2012);
-    //     console.log(this.state.results);
-    // }
+    componentDidMount() {
+        this.grabArticles("tech", 2000, 2012);
+    }
+
+    grabArticles = (searchQuery, startYear, endYear) => {
+        API.search(searchQuery, startYear, endYear)
+            .then(res => this.setState({ results: res.data.response.docs }))
+            .then(console.log(this.state.results))
+            .catch(err => console.log(err));
+    };
 
     handleInputChange = event => {
         let name = event.target.name;
@@ -28,19 +33,27 @@ class AppContainer extends Component {
         console.log("SEARCH: " + this.state.search);
         console.log("START YEAR: " + this.state.startYear);
         console.log("END YEAR: " + this.state.endYear);
-        console.log("NUM OF ARTICLES: " + this.state.numOfArticles);
-    };
-
-    grabArticles = (searchQuery, startYear, endYear) => {
-        API.search(searchQuery, startYear, endYear)
-            .then(res => this.setState({ results: res.data.response.docs }))
-            .then(console.log(this.state.results))
-            .catch(err => console.log(err));
     };
 
     handleSearchButton = event => {
         event.preventDefault();
+        this.setState({
+            results:[]
+        });
         this.grabArticles(this.state.search, this.state.startYear, this.state.endYear);
+    };
+
+    clearFields = () => {
+        this.setState({
+            search: "",
+            startYear:0,
+            endYear:0
+        });
+    };
+
+    handleClearSearchButton = event => {
+        event.preventDefault();
+        this.clearFields();
     };
 
     render() {
@@ -49,11 +62,11 @@ class AppContainer extends Component {
                 <Header/>
                 <Search
                     search={this.state.search}
-                    numOfArticles={this.state.numOfArticles}
                     startYear={this.state.startYear}
                     endYear={this.state.endYear}
                     handleInputChange={this.handleInputChange}
                     handleSearchButton={this.handleSearchButton}
+                    handleClearSearchButton={this.handleClearSearchButton}
                 />
                 <Results
                     results={this.state.results}

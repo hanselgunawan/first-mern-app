@@ -17,13 +17,13 @@ let panelNumberStyle = {
 };
 
 const ResultsWell = props =>
-        {props.results.map(data =>
+        {return props.results.map((data, key) =>
             <div className="well">
-                <h3 className="articleHeadline"><span className="label label-primary" style={panelNumberStyle}>1</span>
-                    <a href="#"><strong> Applying a ‘Reality Test’ on Congestion Pricing</strong></a>
+                <h3 className="articleHeadline"><span className="label label-primary" style={panelNumberStyle}>{key+1}</span>
+                    <a href={data.web_url} target="_blank"><strong>{data.headline.main}</strong></a>
                     <button className="btn btn-primary" style={panelSaveBtn}>Save</button>
                 </h3>
-                <h5><strong>Publication Date:</strong> 02/10/2017</h5>
+                <h5><strong>Publication Date:</strong> {data.pub_date ? data.pub_date.substring(0, 10) : "N/A"}</h5>
             </div>
         )}
 

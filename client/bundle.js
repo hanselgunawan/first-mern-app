@@ -19664,10 +19664,15 @@ var AppContainer = function (_Component) {
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = AppContainer.__proto__ || Object.getPrototypeOf(AppContainer)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
             search: "",
-            numOfArticles: 0,
             startYear: 0,
             endYear: 0,
             results: []
+        }, _this.grabArticles = function (searchQuery, startYear, endYear) {
+            _API2.default.search(searchQuery, startYear, endYear).then(function (res) {
+                return _this.setState({ results: res.data.response.docs });
+            }).then(console.log(_this.state.results)).catch(function (err) {
+                return console.log(err);
+            });
         }, _this.handleInputChange = function (event) {
             var name = event.target.name;
             var value = event.target.value;
@@ -19675,25 +19680,30 @@ var AppContainer = function (_Component) {
             console.log("SEARCH: " + _this.state.search);
             console.log("START YEAR: " + _this.state.startYear);
             console.log("END YEAR: " + _this.state.endYear);
-            console.log("NUM OF ARTICLES: " + _this.state.numOfArticles);
-        }, _this.grabArticles = function (searchQuery, startYear, endYear) {
-            _API2.default.search(searchQuery, startYear, endYear).then(function (res) {
-                return _this.setState({ results: res.data.response.docs });
-            }).then(console.log(_this.state.results)).catch(function (err) {
-                return console.log(err);
-            });
         }, _this.handleSearchButton = function (event) {
             event.preventDefault();
+            _this.setState({
+                results: []
+            });
             _this.grabArticles(_this.state.search, _this.state.startYear, _this.state.endYear);
+        }, _this.clearFields = function () {
+            _this.setState({
+                search: "",
+                startYear: 0,
+                endYear: 0
+            });
+        }, _this.handleClearSearchButton = function (event) {
+            event.preventDefault();
+            _this.clearFields();
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
-    // componentDidMount() {
-    //     this.grabArticles("tech", 2000, 2012);
-    //     console.log(this.state.results);
-    // }
-
     _createClass(AppContainer, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+            this.grabArticles("tech", 2000, 2012);
+        }
+    }, {
         key: "render",
         value: function render() {
             return _react2.default.createElement(
@@ -19702,11 +19712,11 @@ var AppContainer = function (_Component) {
                 _react2.default.createElement(_Header2.default, null),
                 _react2.default.createElement(_Search2.default, {
                     search: this.state.search,
-                    numOfArticles: this.state.numOfArticles,
                     startYear: this.state.startYear,
                     endYear: this.state.endYear,
                     handleInputChange: this.handleInputChange,
-                    handleSearchButton: this.handleSearchButton
+                    handleSearchButton: this.handleSearchButton,
+                    handleClearSearchButton: this.handleClearSearchButton
                 }),
                 _react2.default.createElement(_Results2.default, {
                     results: this.state.results
@@ -19817,11 +19827,11 @@ var Search = function Search(props) {
             { className: "col-lg-8", style: paddingNone },
             _react2.default.createElement(_SearchPanel2.default, {
                 search: props.search,
-                numOfArticles: props.numOfArticles,
                 startYear: props.startYear,
                 endYear: props.endYear,
                 handleInputChange: props.handleInputChange,
-                handleSearchButton: props.handleSearchButton
+                handleSearchButton: props.handleSearchButton,
+                handleClearSearchButton: props.handleClearSearchButton
             })
         ),
         _react2.default.createElement("div", { className: "col-lg-2" })
@@ -19879,11 +19889,11 @@ var SearchPanel = function SearchPanel(props) {
             { className: "panel-body" },
             _react2.default.createElement(_SearchPanelForm2.default, {
                 search: props.search,
-                numOfArticles: props.numOfArticles,
                 startYear: props.startYear,
                 endYear: props.endYear,
                 handleInputChange: props.handleInputChange,
-                handleSearchButton: props.handleSearchButton
+                handleSearchButton: props.handleSearchButton,
+                handleClearSearchButton: props.handleClearSearchButton
             })
         )
     );
@@ -19937,40 +19947,6 @@ var SearchPanelForm = function SearchPanelForm(props) {
             { className: "form-group" },
             _react2.default.createElement(
                 "label",
-                { htmlFor: "pwd" },
-                "Number of Records to Retrieve:"
-            ),
-            _react2.default.createElement(
-                "select",
-                {
-                    className: "form-control",
-                    itemID: "num-records-select",
-                    name: "numOfArticles",
-                    value: props.numOfArticles,
-                    onChange: props.handleInputChange
-                },
-                _react2.default.createElement(
-                    "option",
-                    { value: "1" },
-                    "1"
-                ),
-                _react2.default.createElement(
-                    "option",
-                    { value: "5", selected: true },
-                    "5"
-                ),
-                _react2.default.createElement(
-                    "option",
-                    { value: "10" },
-                    "10"
-                )
-            )
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "form-group" },
-            _react2.default.createElement(
-                "label",
                 { htmlFor: "start-year" },
                 "Start Year (Optional):"
             ),
@@ -20011,7 +19987,8 @@ var SearchPanelForm = function SearchPanelForm(props) {
             btnType: "button",
             btnClass: "btn btn-default",
             btnID: "clear-all",
-            btnText: "Clear Results"
+            btnText: "Clear Results",
+            handleClearSearchButton: props.handleClearSearchButton
         })
     );
 };
@@ -20055,7 +20032,7 @@ var style = {
 var Button = function Button(props) {
     return _react2.default.createElement(
         "button",
-        { onClick: props.btnType === "submit" ? props.handleSearchButton : props.handleSearchButton, style: props.btnType === "submit" ? style.submit : style.clearAll, type: props.btnType, className: props.btnClass, itemID: props.btnID },
+        { onClick: props.btnType === "submit" ? props.handleSearchButton : props.handleClearSearchButton, style: props.btnType === "submit" ? style.submit : style.clearAll, type: props.btnType, className: props.btnClass, itemID: props.btnID },
         props.btnText
     );
 };
@@ -20101,7 +20078,7 @@ var Results = function Results(props) {
             "div",
             { className: "col-lg-8", style: paddingNone },
             _react2.default.createElement(_ResultsPanel2.default, {
-                result: props.results
+                results: props.results
             })
         ),
         _react2.default.createElement("div", { className: "col-lg-2" })
@@ -20161,7 +20138,7 @@ var ResultsPanel = function ResultsPanel(props) {
         _react2.default.createElement(
             "div",
             { className: "panel-body" },
-            props.results ? _react2.default.createElement(_ResultsWell2.default, { result: props.results }) : _react2.default.createElement(_EmptyWell2.default, null)
+            props.results.length > 0 ? _react2.default.createElement(_ResultsWell2.default, { results: props.results }) : _react2.default.createElement(_EmptyWell2.default, null)
         )
     );
 };
@@ -20202,7 +20179,7 @@ var panelNumberStyle = {
 };
 
 var ResultsWell = function ResultsWell(props) {
-    props.results.map(function (data) {
+    return props.results.map(function (data, key) {
         return _react2.default.createElement(
             "div",
             { className: "well" },
@@ -20212,15 +20189,15 @@ var ResultsWell = function ResultsWell(props) {
                 _react2.default.createElement(
                     "span",
                     { className: "label label-primary", style: panelNumberStyle },
-                    "1"
+                    key + 1
                 ),
                 _react2.default.createElement(
                     "a",
-                    { href: "#" },
+                    { href: data.web_url, target: "_blank" },
                     _react2.default.createElement(
                         "strong",
                         null,
-                        " Applying a \u2018Reality Test\u2019 on Congestion Pricing"
+                        data.headline.main
                     )
                 ),
                 _react2.default.createElement(
@@ -20237,7 +20214,8 @@ var ResultsWell = function ResultsWell(props) {
                     null,
                     "Publication Date:"
                 ),
-                " 02/10/2017"
+                " ",
+                data.pub_date ? data.pub_date.substring(0, 10) : "N/A"
             )
         );
     });
