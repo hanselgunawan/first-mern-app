@@ -19666,7 +19666,11 @@ var AppContainer = function (_Component) {
             search: "",
             startYear: 0,
             endYear: 0,
-            results: []
+            results: [],
+            headline: "",
+            webUrl: "",
+            dateSaved: "",
+            messageFromServer: ""
         }, _this.grabArticles = function (searchQuery, startYear, endYear) {
             _API2.default.search(searchQuery, startYear, endYear).then(function (res) {
                 return _this.setState({ results: res.data.response.docs });
@@ -19695,6 +19699,8 @@ var AppContainer = function (_Component) {
         }, _this.handleClearSearchButton = function (event) {
             event.preventDefault();
             _this.clearFields();
+        }, _this.handleSaveButton = function (key) {
+            console.log(_this.state.results[key].headline.main);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -19719,7 +19725,8 @@ var AppContainer = function (_Component) {
                     handleClearSearchButton: this.handleClearSearchButton
                 }),
                 _react2.default.createElement(_Results2.default, {
-                    results: this.state.results
+                    results: this.state.results,
+                    handleSaveButton: this.handleSaveButton
                 }),
                 _react2.default.createElement(_SavedArticles2.default, null)
             );
@@ -20078,7 +20085,8 @@ var Results = function Results(props) {
             "div",
             { className: "col-lg-8", style: paddingNone },
             _react2.default.createElement(_ResultsPanel2.default, {
-                results: props.results
+                results: props.results,
+                handleSaveButton: props.handleSaveButton
             })
         ),
         _react2.default.createElement("div", { className: "col-lg-2" })
@@ -20138,7 +20146,7 @@ var ResultsPanel = function ResultsPanel(props) {
         _react2.default.createElement(
             "div",
             { className: "panel-body" },
-            props.results.length > 0 ? _react2.default.createElement(_ResultsWell2.default, { results: props.results }) : _react2.default.createElement(_EmptyWell2.default, null)
+            props.results.length > 0 ? _react2.default.createElement(_ResultsWell2.default, { results: props.results, handleSaveButton: props.handleSaveButton }) : _react2.default.createElement(_EmptyWell2.default, null)
         )
     );
 };
@@ -20202,7 +20210,7 @@ var ResultsWell = function ResultsWell(props) {
                 ),
                 _react2.default.createElement(
                     "button",
-                    { className: "btn btn-primary", style: panelSaveBtn },
+                    { className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), style: panelSaveBtn },
                     "Save"
                 )
             ),

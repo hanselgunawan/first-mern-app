@@ -10,7 +10,11 @@ class AppContainer extends Component {
         search: "",
         startYear:0,
         endYear:0,
-        results:[]
+        results:[],
+        headline:"",
+        webUrl:"",
+        dateSaved:"",
+        messageFromServer:""
     };
 
     componentDidMount() {
@@ -56,6 +60,10 @@ class AppContainer extends Component {
         this.clearFields();
     };
 
+    handleSaveButton = key => {
+        console.log(this.state.results[key].headline.main);
+    };
+
     render() {
         return (
             <div>
@@ -70,6 +78,7 @@ class AppContainer extends Component {
                 />
                 <Results
                     results={this.state.results}
+                    handleSaveButton={this.handleSaveButton}
                 />
                 <SavedArticles/>
             </div>

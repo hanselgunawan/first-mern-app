@@ -20,7 +20,7 @@ const ResultsPanel = props =>
     <div className="panel panel-primary" style={panelContainerStyle}>
         <div className="panel-heading" style={panelHeadingStyle}>Top Articles</div>
         <div className="panel-body">
-            {props.results.length>0 ? <ResultsWell results={props.results} /> : <EmptyWell/>}
+            {props.results.length>0 ? <ResultsWell results={props.results} handleSaveButton={props.handleSaveButton} /> : <EmptyWell/>}
         </div>
     </div>
 
