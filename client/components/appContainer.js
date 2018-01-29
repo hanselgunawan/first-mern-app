@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import axios from "axios";
 import Header from "./Header";
 import Search from "./Search";
 import Results from "./Results";
 import SavedArticles from "./SavedArticles";
 import API from "../utils/API";
+var querystring = require('querystring');
 
 class AppContainer extends Component {
     state = {
@@ -11,20 +13,26 @@ class AppContainer extends Component {
         startYear:0,
         endYear:0,
         results:[],
+        savedArticles:[],
         headline:"",
         webUrl:"",
-        dateSaved:"",
-        messageFromServer:""
+        dateSaved:""
     };
 
     componentDidMount() {
         this.grabArticles("tech", 2000, 2012);
+        this.getSavedArticles();
     }
+
+    getSavedArticles = () => {
+        axios.get("/getAll")
+            .then( res => this.setState({ savedArticles:res.data }))
+            .catch(err => console.log(err));
+    };
 
     grabArticles = (searchQuery, startYear, endYear) => {
         API.search(searchQuery, startYear, endYear)
             .then(res => this.setState({ results: res.data.response.docs }))
-            .then(console.log(this.state.results))
             .catch(err => console.log(err));
     };
 
@@ -60,8 +68,35 @@ class AppContainer extends Component {
         this.clearFields();
     };
 
+    insertNewArticle = key => {
+        let myDate = new Date();
+        axios.post("/insert",
+            querystring.stringify({
+                headline: this.state.results[key].headline.main,
+                web_url: this.state.results[key].web_url,
+                saved_date: myDate.getFullYear() + "-" + (myDate.getMonth()+1) + "-" + myDate.getDate()
+            }), {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            }).then(function (response) {
+            console.log(response);
+        });
+    };
+
+    removeArticle = key => {
+        axios.get("/delete?id="+key+"")
+            .then(function (response) {
+            console.log(response);
+        });
+    };
+
     handleSaveButton = key => {
-        console.log(this.state.results[key].headline.main);
+        this.insertNewArticle(key);
+    };
+
+    handleRemoveButton = key => {
+        this.removeArticle(key);
     };
 
     render() {
@@ -80,7 +115,10 @@ class AppContainer extends Component {
                     results={this.state.results}
                     handleSaveButton={this.handleSaveButton}
                 />
-                <SavedArticles/>
+                <SavedArticles
+                    savedArticles={this.state.savedArticles}
+                    handleRemoveButton={this.handleRemoveButton}
+                />
             </div>
         );
     }

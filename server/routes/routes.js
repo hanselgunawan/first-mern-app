@@ -1,66 +1,50 @@
 var express = require('express');
 var router = express.Router();
-var bodyParser = require('body-parser');
-var Expense = require('../../models/Expense');
+var NYT = require('../../models/NYT');
 
 router.get('/', function(req, res){
     res.render('index')
 });
 
 router.route('/insert').post(function (req, res) {
-    var expense = new Expense();
-    expense.description = req.body.desc;
-    expense.amount = req.body.amount;
-    expense.month = req.body.month;
-    expense.year = req.body.year;
+    var nyt = new NYT();
+    nyt.headline = req.body.headline;
+    nyt.web_url = req.body.web_url;
+    nyt.saved_date = req.body.saved_date;
 
-    expense.save(function (err) {
+    nyt.save(function (err) {
         if(err) res.send(err);
-        res.send('Expense successfully added!');
+        res.send('Article successfully added!');
     });
 });
 
 router.route('/update').post(function (req,res) {
     const doc = {
-        description: req.body.desc,
-        amount: req.body.amount,
-        month: req.body.month,
-        year: req.body.year
+        headline:req.body.headline,
+        web_url:req.body.web_url,
+        saved_date:req.body.saved_date
     };
     console.log(doc);
 
-    Expense.update({_id:req.body._id}, doc, function (err,result) {
+    NYT.update({_id:req.body._id}, doc, function (err,result) {
         if(err)res.send(err);
         res.send('Expense successfully updated!');
     });
 });
 
 router.get('/delete', function (req,res) {
-    var id = req.body.id;
-    Expense.find({_id:req.body._id}).remove().exec(function (err, expense) {
+    var id = req.query.id;
+    NYT.find({_id:id}).remove().exec(function (err, nyt) {
         if(err) res.send(err);
         res.send('Expense successfully deleted!');
     });
 });
 
 router.get('/getAll', function (req,res) {
-    var monthRec = req.query.month;
-    var yearRec = req.query.year;
-    if(monthRec && monthRec !== 'All')
-    {
-        Expense.find({$and:[{month:monthRec}, {year: yearRec}]}, function (err, result) {
-            if(err) res.send(err);
-            res.json(result);
-        });
-    }
-    else
-    {
-        Expense.find({year: yearRec}, function(err, expenses) {
-            if (err)
-                res.send(err);
-            res.json(expenses);
-        });
-    }
+    NYT.find({}, function (err, result) {
+        if(err) res.send(err);
+        res.json(result);
+    });
 });
 
 module.exports = router;

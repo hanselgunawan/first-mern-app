@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 23);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -71,9 +71,9 @@
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(23);
-} else {
   module.exports = __webpack_require__(24);
+} else {
+  module.exports = __webpack_require__(25);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
@@ -86,7 +86,7 @@ if (process.env.NODE_ENV === 'production') {
 
 
 var bind = __webpack_require__(17);
-var isBuffer = __webpack_require__(56);
+var isBuffer = __webpack_require__(44);
 
 /*global toString:true*/
 
@@ -878,7 +878,7 @@ module.exports = warning;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(1);
-var normalizeHeaderName = __webpack_require__(58);
+var normalizeHeaderName = __webpack_require__(46);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -987,7 +987,7 @@ module.exports = defaults;
 if (process.env.NODE_ENV !== 'production') {
   var invariant = __webpack_require__(6);
   var warning = __webpack_require__(7);
-  var ReactPropTypesSecret = __webpack_require__(25);
+  var ReactPropTypesSecret = __webpack_require__(26);
   var loggedTypeFailures = {};
 }
 
@@ -1286,7 +1286,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(28);
+var isTextNode = __webpack_require__(29);
 
 /*eslint-disable no-bitwise */
 
@@ -1347,36 +1347,7 @@ module.exports = focusNode;
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var centerText = {
-    textAlign: "center"
-};
-
-var EmptyWell = function EmptyWell() {
-    return _react2.default.createElement(
-        "div",
-        { className: "well", style: centerText },
-        _react2.default.createElement(
-            "h3",
-            { className: "articleHeadline" },
-            "No articles to display"
-        )
-    );
-};
-
-exports.default = EmptyWell;
+module.exports = __webpack_require__(43);
 
 /***/ }),
 /* 17 */
@@ -1404,12 +1375,12 @@ module.exports = function bind(fn, thisArg) {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 var utils = __webpack_require__(1);
-var settle = __webpack_require__(59);
-var buildURL = __webpack_require__(61);
-var parseHeaders = __webpack_require__(62);
-var isURLSameOrigin = __webpack_require__(63);
+var settle = __webpack_require__(47);
+var buildURL = __webpack_require__(49);
+var parseHeaders = __webpack_require__(50);
+var isURLSameOrigin = __webpack_require__(51);
 var createError = __webpack_require__(19);
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(64);
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(52);
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -1506,7 +1477,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(65);
+      var cookies = __webpack_require__(53);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -1591,7 +1562,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(60);
+var enhanceError = __webpack_require__(48);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -1654,15 +1625,50 @@ module.exports = Cancel;
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(26);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var centerText = {
+    textAlign: "center"
+};
+
+var EmptyWell = function EmptyWell() {
+    return _react2.default.createElement(
+        "div",
+        { className: "well", style: centerText },
+        _react2.default.createElement(
+            "h3",
+            { className: "articleHeadline" },
+            "No articles to display"
+        )
+    );
+};
+
+exports.default = EmptyWell;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(27);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _App = __webpack_require__(35);
+var _App = __webpack_require__(36);
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -1671,7 +1677,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.getElementById('root'));
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1699,7 +1705,7 @@ isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_F
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3064,7 +3070,7 @@ module.exports = react;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3083,7 +3089,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3121,15 +3127,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(27);
+  module.exports = __webpack_require__(28);
 } else {
-  module.exports = __webpack_require__(30);
+  module.exports = __webpack_require__(31);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3365,7 +3371,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3380,7 +3386,7 @@ Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",r
  * @typechecks
  */
 
-var isNode = __webpack_require__(29);
+var isNode = __webpack_require__(30);
 
 /**
  * @param {*} object The object to check.
@@ -3393,7 +3399,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3421,7 +3427,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3455,8 +3461,8 @@ var containsNode = __webpack_require__(14);
 var focusNode = __webpack_require__(15);
 var emptyObject = __webpack_require__(5);
 var checkPropTypes = __webpack_require__(9);
-var hyphenateStyleName = __webpack_require__(31);
-var camelizeStyleName = __webpack_require__(33);
+var hyphenateStyleName = __webpack_require__(32);
+var camelizeStyleName = __webpack_require__(34);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -18823,7 +18829,7 @@ module.exports = reactDom;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18838,7 +18844,7 @@ module.exports = reactDom;
 
 
 
-var hyphenate = __webpack_require__(32);
+var hyphenate = __webpack_require__(33);
 
 var msPattern = /^ms-/;
 
@@ -18865,7 +18871,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18901,7 +18907,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18916,7 +18922,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(34);
+var camelize = __webpack_require__(35);
 
 var msPattern = /^-ms-/;
 
@@ -18944,7 +18950,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18979,7 +18985,7 @@ function camelize(string) {
 module.exports = camelize;
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18993,9 +18999,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(36);
+__webpack_require__(37);
 
-var _appContainer = __webpack_require__(41);
+var _appContainer = __webpack_require__(42);
 
 var _appContainer2 = _interopRequireDefault(_appContainer);
 
@@ -19008,13 +19014,13 @@ var App = function App() {
 exports.default = App;
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(37);
+var content = __webpack_require__(38);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -19022,7 +19028,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(39)(content, options);
+var update = __webpack_require__(40)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -19039,10 +19045,10 @@ if(false) {
 }
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(38)(undefined);
+exports = module.exports = __webpack_require__(39)(undefined);
 // imports
 
 
@@ -19053,7 +19059,7 @@ exports.push([module.i, ".App {\n  text-align: center;\n}\n\n.App-logo {\n  anim
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports) {
 
 /*
@@ -19135,7 +19141,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -19191,7 +19197,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(40);
+var	fixUrls = __webpack_require__(41);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -19507,7 +19513,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 
@@ -19602,7 +19608,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19618,23 +19624,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _Header = __webpack_require__(42);
+var _axios = __webpack_require__(16);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _Header = __webpack_require__(61);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _Search = __webpack_require__(43);
+var _Search = __webpack_require__(62);
 
 var _Search2 = _interopRequireDefault(_Search);
 
-var _Results = __webpack_require__(47);
+var _Results = __webpack_require__(66);
 
 var _Results2 = _interopRequireDefault(_Results);
 
-var _SavedArticles = __webpack_require__(50);
+var _SavedArticles = __webpack_require__(69);
 
 var _SavedArticles2 = _interopRequireDefault(_SavedArticles);
 
-var _API = __webpack_require__(53);
+var _API = __webpack_require__(72);
 
 var _API2 = _interopRequireDefault(_API);
 
@@ -19647,6 +19657,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var querystring = __webpack_require__(73);
 
 var AppContainer = function (_Component) {
     _inherits(AppContainer, _Component);
@@ -19667,14 +19679,20 @@ var AppContainer = function (_Component) {
             startYear: 0,
             endYear: 0,
             results: [],
+            savedArticles: [],
             headline: "",
             webUrl: "",
-            dateSaved: "",
-            messageFromServer: ""
+            dateSaved: ""
+        }, _this.getSavedArticles = function () {
+            _axios2.default.get("/getAll").then(function (res) {
+                return _this.setState({ savedArticles: res.data });
+            }).catch(function (err) {
+                return console.log(err);
+            });
         }, _this.grabArticles = function (searchQuery, startYear, endYear) {
             _API2.default.search(searchQuery, startYear, endYear).then(function (res) {
                 return _this.setState({ results: res.data.response.docs });
-            }).then(console.log(_this.state.results)).catch(function (err) {
+            }).catch(function (err) {
                 return console.log(err);
             });
         }, _this.handleInputChange = function (event) {
@@ -19699,8 +19717,27 @@ var AppContainer = function (_Component) {
         }, _this.handleClearSearchButton = function (event) {
             event.preventDefault();
             _this.clearFields();
+        }, _this.insertNewArticle = function (key) {
+            var myDate = new Date();
+            _axios2.default.post("/insert", querystring.stringify({
+                headline: _this.state.results[key].headline.main,
+                web_url: _this.state.results[key].web_url,
+                saved_date: myDate.getFullYear() + "-" + (myDate.getMonth() + 1) + "-" + myDate.getDate()
+            }), {
+                headers: {
+                    "Content-Type": "application/x-www-form-urlencoded"
+                }
+            }).then(function (response) {
+                console.log(response);
+            });
+        }, _this.removeArticle = function (key) {
+            _axios2.default.get("/delete?id=" + key + "").then(function (response) {
+                console.log(response);
+            });
         }, _this.handleSaveButton = function (key) {
-            console.log(_this.state.results[key].headline.main);
+            _this.insertNewArticle(key);
+        }, _this.handleRemoveButton = function (key) {
+            _this.removeArticle(key);
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -19708,6 +19745,7 @@ var AppContainer = function (_Component) {
         key: "componentDidMount",
         value: function componentDidMount() {
             this.grabArticles("tech", 2000, 2012);
+            this.getSavedArticles();
         }
     }, {
         key: "render",
@@ -19728,7 +19766,10 @@ var AppContainer = function (_Component) {
                     results: this.state.results,
                     handleSaveButton: this.handleSaveButton
                 }),
-                _react2.default.createElement(_SavedArticles2.default, null)
+                _react2.default.createElement(_SavedArticles2.default, {
+                    savedArticles: this.state.savedArticles,
+                    handleRemoveButton: this.handleRemoveButton
+                })
             );
         }
     }]);
@@ -19739,722 +19780,7 @@ var AppContainer = function (_Component) {
 exports.default = AppContainer;
 
 /***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var headerContainerStyle = {
-    borderStyle: "solid",
-    borderColor: "#FA6E59",
-    height: 200,
-    borderWidth: 5,
-    textAlign: "center",
-    borderRadius: 5,
-    backgroundColor: "#4897D8"
-};
-
-var headerH1Style = {
-    textAlign: "center",
-    height: 200,
-    paddingTop: 50,
-    letterSpacing: 10,
-    color: "#FFDB5C",
-    fontSize: 50
-};
-
-var Header = function Header() {
-    return _react2.default.createElement(
-        "div",
-        { className: "row" },
-        _react2.default.createElement("div", { className: "col-lg-2" }),
-        _react2.default.createElement(
-            "div",
-            { className: "col-lg-8", style: headerContainerStyle },
-            _react2.default.createElement(
-                "h1",
-                { style: headerH1Style },
-                "New York Times Search"
-            )
-        ),
-        _react2.default.createElement("div", { className: "col-lg-2" })
-    );
-};
-
-exports.default = Header;
-
-/***/ }),
 /* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _SearchPanel = __webpack_require__(44);
-
-var _SearchPanel2 = _interopRequireDefault(_SearchPanel);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var margin = {
-    marginTop: 15
-};
-
-var paddingNone = {
-    paddingLeft: 0,
-    paddingRight: 0
-};
-
-var Search = function Search(props) {
-    return _react2.default.createElement(
-        "div",
-        { className: "row", style: margin },
-        _react2.default.createElement("div", { className: "col-lg-2" }),
-        _react2.default.createElement(
-            "div",
-            { className: "col-lg-8", style: paddingNone },
-            _react2.default.createElement(_SearchPanel2.default, {
-                search: props.search,
-                startYear: props.startYear,
-                endYear: props.endYear,
-                handleInputChange: props.handleInputChange,
-                handleSearchButton: props.handleSearchButton,
-                handleClearSearchButton: props.handleClearSearchButton
-            })
-        ),
-        _react2.default.createElement("div", { className: "col-lg-2" })
-    );
-};
-
-exports.default = Search;
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _SearchPanelForm = __webpack_require__(45);
-
-var _SearchPanelForm2 = _interopRequireDefault(_SearchPanelForm);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var panelContainerStyle = {
-    borderStyle: "solid",
-    borderColor: "#FA6E59",
-    borderWidth: 2,
-    borderRadius: 5
-};
-
-var panelHeadingStyle = {
-    color: "#FFDB5C",
-    fontSize: 18,
-    letterSpacing: 2,
-    backgroundColor: "#4897D8"
-};
-
-var SearchPanel = function SearchPanel(props) {
-    return _react2.default.createElement(
-        "div",
-        { className: "panel panel-primary", style: panelContainerStyle },
-        _react2.default.createElement(
-            "div",
-            { className: "panel-heading", style: panelHeadingStyle },
-            "Search Parameters"
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "panel-body" },
-            _react2.default.createElement(_SearchPanelForm2.default, {
-                search: props.search,
-                startYear: props.startYear,
-                endYear: props.endYear,
-                handleInputChange: props.handleInputChange,
-                handleSearchButton: props.handleSearchButton,
-                handleClearSearchButton: props.handleClearSearchButton
-            })
-        )
-    );
-};
-
-exports.default = SearchPanel;
-
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _Button = __webpack_require__(46);
-
-var _Button2 = _interopRequireDefault(_Button);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var SearchPanelForm = function SearchPanelForm(props) {
-    return _react2.default.createElement(
-        "form",
-        { role: "form" },
-        _react2.default.createElement(
-            "div",
-            { className: "form-group" },
-            _react2.default.createElement(
-                "label",
-                { htmlFor: "search" },
-                "Search Term:"
-            ),
-            _react2.default.createElement("input", { type: "text",
-                className: "form-control",
-                itemID: "search-term",
-                name: "search",
-                value: props.search,
-                onChange: props.handleInputChange
-            })
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "form-group" },
-            _react2.default.createElement(
-                "label",
-                { htmlFor: "start-year" },
-                "Start Year (Optional):"
-            ),
-            _react2.default.createElement("input", {
-                type: "text",
-                className: "form-control",
-                itemID: "start-year",
-                name: "startYear",
-                value: props.startYear,
-                onChange: props.handleInputChange
-            })
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "form-group" },
-            _react2.default.createElement(
-                "label",
-                { htmlFor: "end-year" },
-                "End Year (Optional):"
-            ),
-            _react2.default.createElement("input", {
-                type: "text",
-                className: "form-control",
-                itemID: "end-year",
-                name: "endYear",
-                value: props.endYear,
-                onChange: props.handleInputChange
-            })
-        ),
-        _react2.default.createElement(_Button2.default, {
-            btnType: "submit",
-            btnClass: "btn btn-default",
-            btnID: "run-search",
-            btnText: "Search",
-            handleSearchButton: props.handleSearchButton
-        }),
-        _react2.default.createElement(_Button2.default, {
-            btnType: "button",
-            btnClass: "btn btn-default",
-            btnID: "clear-all",
-            btnText: "Clear Results",
-            handleClearSearchButton: props.handleClearSearchButton
-        })
-    );
-};
-
-exports.default = SearchPanelForm;
-
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var style = {
-    submit: {
-        marginRight: 5,
-        color: "#FFDB5C",
-        backgroundColor: "#4897D8",
-        paddingLeft: 15,
-        paddingRight: 15
-    },
-    clearAll: {
-        marginRight: 5,
-        color: "#FA6E59",
-        backgroundColor: "#FFDB5C",
-        paddingLeft: 15,
-        paddingRight: 15
-    }
-};
-
-var Button = function Button(props) {
-    return _react2.default.createElement(
-        "button",
-        { onClick: props.btnType === "submit" ? props.handleSearchButton : props.handleClearSearchButton, style: props.btnType === "submit" ? style.submit : style.clearAll, type: props.btnType, className: props.btnClass, itemID: props.btnID },
-        props.btnText
-    );
-};
-
-exports.default = Button;
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ResultsPanel = __webpack_require__(48);
-
-var _ResultsPanel2 = _interopRequireDefault(_ResultsPanel);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var margin = {
-    marginTop: 15
-};
-
-var paddingNone = {
-    paddingLeft: 0,
-    paddingRight: 0
-};
-
-var Results = function Results(props) {
-    return _react2.default.createElement(
-        "div",
-        { className: "row", style: margin },
-        _react2.default.createElement("div", { className: "col-lg-2" }),
-        _react2.default.createElement(
-            "div",
-            { className: "col-lg-8", style: paddingNone },
-            _react2.default.createElement(_ResultsPanel2.default, {
-                results: props.results,
-                handleSaveButton: props.handleSaveButton
-            })
-        ),
-        _react2.default.createElement("div", { className: "col-lg-2" })
-    );
-};
-
-exports.default = Results;
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _ResultsWell = __webpack_require__(49);
-
-var _ResultsWell2 = _interopRequireDefault(_ResultsWell);
-
-var _EmptyWell = __webpack_require__(16);
-
-var _EmptyWell2 = _interopRequireDefault(_EmptyWell);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var panelContainerStyle = {
-    borderStyle: "solid",
-    borderColor: "#FA6E59",
-    borderWidth: 2,
-    borderRadius: 5
-};
-
-var panelHeadingStyle = {
-    color: "#FFDB5C",
-    fontSize: 18,
-    letterSpacing: 2,
-    backgroundColor: "#4897D8"
-};
-
-var ResultsPanel = function ResultsPanel(props) {
-    return _react2.default.createElement(
-        "div",
-        { className: "panel panel-primary", style: panelContainerStyle },
-        _react2.default.createElement(
-            "div",
-            { className: "panel-heading", style: panelHeadingStyle },
-            "Top Articles"
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "panel-body" },
-            props.results.length > 0 ? _react2.default.createElement(_ResultsWell2.default, { results: props.results, handleSaveButton: props.handleSaveButton }) : _react2.default.createElement(_EmptyWell2.default, null)
-        )
-    );
-};
-
-exports.default = ResultsPanel;
-
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var panelSaveBtn = {
-    float: "right",
-    backgroundColor: "#4897D8",
-    color: "#FFDB5C",
-    fontSize: 16,
-    paddingLeft: 20,
-    paddingRight: 20,
-    letterSpacing: 2
-};
-
-var panelNumberStyle = {
-    backgroundColor: "#4897D8",
-    color: "#FFDB5C",
-    marginRight: 10
-};
-
-var ResultsWell = function ResultsWell(props) {
-    return props.results.map(function (data, key) {
-        return _react2.default.createElement(
-            "div",
-            { className: "well" },
-            _react2.default.createElement(
-                "h3",
-                { className: "articleHeadline" },
-                _react2.default.createElement(
-                    "span",
-                    { className: "label label-primary", style: panelNumberStyle },
-                    key + 1
-                ),
-                _react2.default.createElement(
-                    "a",
-                    { href: data.web_url, target: "_blank" },
-                    _react2.default.createElement(
-                        "strong",
-                        null,
-                        data.headline.main
-                    )
-                ),
-                _react2.default.createElement(
-                    "button",
-                    { className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), style: panelSaveBtn },
-                    "Save"
-                )
-            ),
-            _react2.default.createElement(
-                "h5",
-                null,
-                _react2.default.createElement(
-                    "strong",
-                    null,
-                    "Publication Date:"
-                ),
-                " ",
-                data.pub_date ? data.pub_date.substring(0, 10) : "N/A"
-            )
-        );
-    });
-};
-
-exports.default = ResultsWell;
-
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _SavedArticlesPanel = __webpack_require__(51);
-
-var _SavedArticlesPanel2 = _interopRequireDefault(_SavedArticlesPanel);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var margin = {
-    marginTop: 15
-};
-
-var paddingNone = {
-    paddingLeft: 0,
-    paddingRight: 0
-};
-
-var SavedArticles = function SavedArticles() {
-    return _react2.default.createElement(
-        "div",
-        { className: "row", style: margin },
-        _react2.default.createElement("div", { className: "col-lg-2" }),
-        _react2.default.createElement(
-            "div",
-            { className: "col-lg-8", style: paddingNone },
-            _react2.default.createElement(_SavedArticlesPanel2.default, null)
-        ),
-        _react2.default.createElement("div", { className: "col-lg-2" })
-    );
-};
-
-exports.default = SavedArticles;
-
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _SavedArticlesWell = __webpack_require__(52);
-
-var _SavedArticlesWell2 = _interopRequireDefault(_SavedArticlesWell);
-
-var _EmptyWell = __webpack_require__(16);
-
-var _EmptyWell2 = _interopRequireDefault(_EmptyWell);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var panelContainerStyle = {
-    borderStyle: "solid",
-    borderColor: "#FA6E59",
-    borderWidth: 2,
-    borderRadius: 5
-};
-
-var panelHeadingStyle = {
-    color: "#FFDB5C",
-    fontSize: 18,
-    letterSpacing: 2,
-    backgroundColor: "#4897D8"
-};
-
-var count = 0;
-
-var SavedArticlesPanel = function SavedArticlesPanel() {
-    return _react2.default.createElement(
-        "div",
-        { className: "panel panel-primary", style: panelContainerStyle },
-        _react2.default.createElement(
-            "div",
-            { className: "panel-heading", style: panelHeadingStyle },
-            "Saved Articles"
-        ),
-        _react2.default.createElement(
-            "div",
-            { className: "panel-body" },
-            count === 0 ? _react2.default.createElement(_SavedArticlesWell2.default, null) : _react2.default.createElement(_EmptyWell2.default, null)
-        )
-    );
-};
-
-exports.default = SavedArticlesPanel;
-
-/***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var panelRemoveBtn = {
-    float: "right",
-    backgroundColor: "#FFDB5C",
-    color: "#FA6E59",
-    fontSize: 16,
-    paddingLeft: 20,
-    paddingRight: 20,
-    letterSpacing: 2,
-    borderColor: "#4897D8",
-    borderWidth: 2
-};
-
-var panelNumberStyle = {
-    backgroundColor: "#4897D8",
-    color: "#FFDB5C",
-    marginRight: 10
-};
-
-var SavedArticlesWell = function SavedArticlesWell() {
-    return _react2.default.createElement(
-        "div",
-        { className: "well" },
-        _react2.default.createElement(
-            "h3",
-            { className: "articleHeadline" },
-            _react2.default.createElement(
-                "span",
-                { className: "label label-primary", style: panelNumberStyle },
-                "1"
-            ),
-            _react2.default.createElement(
-                "a",
-                { href: "#" },
-                _react2.default.createElement(
-                    "strong",
-                    null,
-                    " Applying a \u2018Reality Test\u2019 on Congestion Pricing"
-                )
-            ),
-            _react2.default.createElement(
-                "button",
-                { className: "btn btn-primary", style: panelRemoveBtn },
-                "Remove"
-            )
-        ),
-        _react2.default.createElement(
-            "h5",
-            null,
-            _react2.default.createElement(
-                "strong",
-                null,
-                "Date Saved:"
-            ),
-            " 02/10/2017"
-        )
-    );
-};
-
-exports.default = SavedArticlesWell;
-
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _axios = __webpack_require__(54);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var API_KEY = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
-var BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + API_KEY + "&q=";
-
-// Export an object with a "search" method that searches the Giphy API for the passed query
-exports.default = {
-    search: function search(searchQuery, startYear, endYear) {
-        if (startYear !== 0) {
-            searchQuery += "&begin_date=" + startYear + "0101";
-        }
-        if (endYear !== 0) {
-            searchQuery += "&end_date=" + endYear + "0101";
-        }
-        return _axios2.default.get(BASEURL + searchQuery);
-    }
-};
-
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(55);
-
-/***/ }),
-/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20462,7 +19788,7 @@ module.exports = __webpack_require__(55);
 
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(17);
-var Axios = __webpack_require__(57);
+var Axios = __webpack_require__(45);
 var defaults = __webpack_require__(8);
 
 /**
@@ -20497,14 +19823,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(21);
-axios.CancelToken = __webpack_require__(71);
+axios.CancelToken = __webpack_require__(59);
 axios.isCancel = __webpack_require__(20);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(72);
+axios.spread = __webpack_require__(60);
 
 module.exports = axios;
 
@@ -20513,7 +19839,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 56 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /*!
@@ -20540,7 +19866,7 @@ function isSlowBuffer (obj) {
 
 
 /***/ }),
-/* 57 */
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20548,8 +19874,8 @@ function isSlowBuffer (obj) {
 
 var defaults = __webpack_require__(8);
 var utils = __webpack_require__(1);
-var InterceptorManager = __webpack_require__(66);
-var dispatchRequest = __webpack_require__(67);
+var InterceptorManager = __webpack_require__(54);
+var dispatchRequest = __webpack_require__(55);
 
 /**
  * Create a new instance of Axios
@@ -20626,7 +19952,7 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 58 */
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20645,7 +19971,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 59 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20678,7 +20004,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 60 */
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20706,7 +20032,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 61 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20781,7 +20107,7 @@ module.exports = function buildURL(url, params, paramsSerializer) {
 
 
 /***/ }),
-/* 62 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20841,7 +20167,7 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 63 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20916,7 +20242,7 @@ module.exports = (
 
 
 /***/ }),
-/* 64 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -20959,7 +20285,7 @@ module.exports = btoa;
 
 
 /***/ }),
-/* 65 */
+/* 53 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21019,7 +20345,7 @@ module.exports = (
 
 
 /***/ }),
-/* 66 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21078,18 +20404,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 67 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var utils = __webpack_require__(1);
-var transformData = __webpack_require__(68);
+var transformData = __webpack_require__(56);
 var isCancel = __webpack_require__(20);
 var defaults = __webpack_require__(8);
-var isAbsoluteURL = __webpack_require__(69);
-var combineURLs = __webpack_require__(70);
+var isAbsoluteURL = __webpack_require__(57);
+var combineURLs = __webpack_require__(58);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -21171,7 +20497,7 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 68 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21198,7 +20524,7 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 69 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21219,7 +20545,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 70 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21240,7 +20566,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 71 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21304,7 +20630,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 72 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -21334,6 +20660,912 @@ module.exports = function spread(callback) {
   return function wrap(arr) {
     return callback.apply(null, arr);
   };
+};
+
+
+/***/ }),
+/* 61 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var headerContainerStyle = {
+    borderStyle: "solid",
+    borderColor: "#FA6E59",
+    height: 200,
+    borderWidth: 5,
+    textAlign: "center",
+    borderRadius: 5,
+    backgroundColor: "#4897D8"
+};
+
+var headerH1Style = {
+    textAlign: "center",
+    height: 200,
+    paddingTop: 50,
+    letterSpacing: 10,
+    color: "#FFDB5C",
+    fontSize: 50
+};
+
+var Header = function Header() {
+    return _react2.default.createElement(
+        "div",
+        { className: "row" },
+        _react2.default.createElement("div", { className: "col-lg-2" }),
+        _react2.default.createElement(
+            "div",
+            { className: "col-lg-8", style: headerContainerStyle },
+            _react2.default.createElement(
+                "h1",
+                { style: headerH1Style },
+                "New York Times Search"
+            )
+        ),
+        _react2.default.createElement("div", { className: "col-lg-2" })
+    );
+};
+
+exports.default = Header;
+
+/***/ }),
+/* 62 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SearchPanel = __webpack_require__(63);
+
+var _SearchPanel2 = _interopRequireDefault(_SearchPanel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var margin = {
+    marginTop: 15
+};
+
+var paddingNone = {
+    paddingLeft: 0,
+    paddingRight: 0
+};
+
+var Search = function Search(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "row", style: margin },
+        _react2.default.createElement("div", { className: "col-lg-2" }),
+        _react2.default.createElement(
+            "div",
+            { className: "col-lg-8", style: paddingNone },
+            _react2.default.createElement(_SearchPanel2.default, {
+                search: props.search,
+                startYear: props.startYear,
+                endYear: props.endYear,
+                handleInputChange: props.handleInputChange,
+                handleSearchButton: props.handleSearchButton,
+                handleClearSearchButton: props.handleClearSearchButton
+            })
+        ),
+        _react2.default.createElement("div", { className: "col-lg-2" })
+    );
+};
+
+exports.default = Search;
+
+/***/ }),
+/* 63 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SearchPanelForm = __webpack_require__(64);
+
+var _SearchPanelForm2 = _interopRequireDefault(_SearchPanelForm);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var panelContainerStyle = {
+    borderStyle: "solid",
+    borderColor: "#FA6E59",
+    borderWidth: 2,
+    borderRadius: 5
+};
+
+var panelHeadingStyle = {
+    color: "#FFDB5C",
+    fontSize: 18,
+    letterSpacing: 2,
+    backgroundColor: "#4897D8"
+};
+
+var SearchPanel = function SearchPanel(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "panel panel-primary", style: panelContainerStyle },
+        _react2.default.createElement(
+            "div",
+            { className: "panel-heading", style: panelHeadingStyle },
+            "Search Parameters"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "panel-body" },
+            _react2.default.createElement(_SearchPanelForm2.default, {
+                search: props.search,
+                startYear: props.startYear,
+                endYear: props.endYear,
+                handleInputChange: props.handleInputChange,
+                handleSearchButton: props.handleSearchButton,
+                handleClearSearchButton: props.handleClearSearchButton
+            })
+        )
+    );
+};
+
+exports.default = SearchPanel;
+
+/***/ }),
+/* 64 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Button = __webpack_require__(65);
+
+var _Button2 = _interopRequireDefault(_Button);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SearchPanelForm = function SearchPanelForm(props) {
+    return _react2.default.createElement(
+        "form",
+        { role: "form" },
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "search" },
+                "Search Term:"
+            ),
+            _react2.default.createElement("input", { type: "text",
+                className: "form-control",
+                itemID: "search-term",
+                name: "search",
+                value: props.search,
+                onChange: props.handleInputChange
+            })
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "start-year" },
+                "Start Year (Optional):"
+            ),
+            _react2.default.createElement("input", {
+                type: "text",
+                className: "form-control",
+                itemID: "start-year",
+                name: "startYear",
+                value: props.startYear,
+                onChange: props.handleInputChange
+            })
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "form-group" },
+            _react2.default.createElement(
+                "label",
+                { htmlFor: "end-year" },
+                "End Year (Optional):"
+            ),
+            _react2.default.createElement("input", {
+                type: "text",
+                className: "form-control",
+                itemID: "end-year",
+                name: "endYear",
+                value: props.endYear,
+                onChange: props.handleInputChange
+            })
+        ),
+        _react2.default.createElement(_Button2.default, {
+            btnType: "submit",
+            btnClass: "btn btn-default",
+            btnID: "run-search",
+            btnText: "Search",
+            handleSearchButton: props.handleSearchButton
+        }),
+        _react2.default.createElement(_Button2.default, {
+            btnType: "button",
+            btnClass: "btn btn-default",
+            btnID: "clear-all",
+            btnText: "Clear Results",
+            handleClearSearchButton: props.handleClearSearchButton
+        })
+    );
+};
+
+exports.default = SearchPanelForm;
+
+/***/ }),
+/* 65 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var style = {
+    submit: {
+        marginRight: 5,
+        color: "#FFDB5C",
+        backgroundColor: "#4897D8",
+        paddingLeft: 15,
+        paddingRight: 15
+    },
+    clearAll: {
+        marginRight: 5,
+        color: "#FA6E59",
+        backgroundColor: "#FFDB5C",
+        paddingLeft: 15,
+        paddingRight: 15
+    }
+};
+
+var Button = function Button(props) {
+    return _react2.default.createElement(
+        "button",
+        { onClick: props.btnType === "submit" ? props.handleSearchButton : props.handleClearSearchButton, style: props.btnType === "submit" ? style.submit : style.clearAll, type: props.btnType, className: props.btnClass, itemID: props.btnID },
+        props.btnText
+    );
+};
+
+exports.default = Button;
+
+/***/ }),
+/* 66 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ResultsPanel = __webpack_require__(67);
+
+var _ResultsPanel2 = _interopRequireDefault(_ResultsPanel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var margin = {
+    marginTop: 15
+};
+
+var paddingNone = {
+    paddingLeft: 0,
+    paddingRight: 0
+};
+
+var Results = function Results(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "row", style: margin },
+        _react2.default.createElement("div", { className: "col-lg-2" }),
+        _react2.default.createElement(
+            "div",
+            { className: "col-lg-8", style: paddingNone },
+            _react2.default.createElement(_ResultsPanel2.default, {
+                results: props.results,
+                handleSaveButton: props.handleSaveButton
+            })
+        ),
+        _react2.default.createElement("div", { className: "col-lg-2" })
+    );
+};
+
+exports.default = Results;
+
+/***/ }),
+/* 67 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _ResultsWell = __webpack_require__(68);
+
+var _ResultsWell2 = _interopRequireDefault(_ResultsWell);
+
+var _EmptyWell = __webpack_require__(22);
+
+var _EmptyWell2 = _interopRequireDefault(_EmptyWell);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var panelContainerStyle = {
+    borderStyle: "solid",
+    borderColor: "#FA6E59",
+    borderWidth: 2,
+    borderRadius: 5
+};
+
+var panelHeadingStyle = {
+    color: "#FFDB5C",
+    fontSize: 18,
+    letterSpacing: 2,
+    backgroundColor: "#4897D8"
+};
+
+var ResultsPanel = function ResultsPanel(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "panel panel-primary", style: panelContainerStyle },
+        _react2.default.createElement(
+            "div",
+            { className: "panel-heading", style: panelHeadingStyle },
+            "Top Articles"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "panel-body" },
+            props.results.length > 0 ? _react2.default.createElement(_ResultsWell2.default, { results: props.results, handleSaveButton: props.handleSaveButton }) : _react2.default.createElement(_EmptyWell2.default, null)
+        )
+    );
+};
+
+exports.default = ResultsPanel;
+
+/***/ }),
+/* 68 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var panelSaveBtn = {
+    float: "right",
+    backgroundColor: "#4897D8",
+    color: "#FFDB5C",
+    fontSize: 16,
+    paddingLeft: 20,
+    paddingRight: 20,
+    letterSpacing: 2
+};
+
+var panelNumberStyle = {
+    backgroundColor: "#4897D8",
+    color: "#FFDB5C",
+    marginRight: 10
+};
+
+var ResultsWell = function ResultsWell(props) {
+    return props.results.map(function (data, key) {
+        return _react2.default.createElement(
+            "div",
+            { className: "well" },
+            _react2.default.createElement(
+                "h3",
+                { className: "articleHeadline" },
+                _react2.default.createElement(
+                    "span",
+                    { className: "label label-primary", style: panelNumberStyle },
+                    key + 1
+                ),
+                _react2.default.createElement(
+                    "a",
+                    { href: data.web_url, target: "_blank" },
+                    _react2.default.createElement(
+                        "strong",
+                        null,
+                        data.headline.main
+                    )
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), style: panelSaveBtn },
+                    "Save"
+                )
+            ),
+            _react2.default.createElement(
+                "h5",
+                null,
+                _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Publication Date:"
+                ),
+                " ",
+                data.pub_date ? data.pub_date.substring(0, 10) : "N/A"
+            )
+        );
+    });
+};
+
+exports.default = ResultsWell;
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SavedArticlesPanel = __webpack_require__(70);
+
+var _SavedArticlesPanel2 = _interopRequireDefault(_SavedArticlesPanel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var margin = {
+    marginTop: 15
+};
+
+var paddingNone = {
+    paddingLeft: 0,
+    paddingRight: 0
+};
+
+var SavedArticles = function SavedArticles(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "row", style: margin },
+        _react2.default.createElement("div", { className: "col-lg-2" }),
+        _react2.default.createElement(
+            "div",
+            { className: "col-lg-8", style: paddingNone },
+            _react2.default.createElement(_SavedArticlesPanel2.default, {
+                savedArticles: props.savedArticles,
+                handleRemoveButton: props.handleRemoveButton
+            })
+        ),
+        _react2.default.createElement("div", { className: "col-lg-2" })
+    );
+};
+
+exports.default = SavedArticles;
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _SavedArticlesWell = __webpack_require__(71);
+
+var _SavedArticlesWell2 = _interopRequireDefault(_SavedArticlesWell);
+
+var _EmptyWell = __webpack_require__(22);
+
+var _EmptyWell2 = _interopRequireDefault(_EmptyWell);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var panelContainerStyle = {
+    borderStyle: "solid",
+    borderColor: "#FA6E59",
+    borderWidth: 2,
+    borderRadius: 5
+};
+
+var panelHeadingStyle = {
+    color: "#FFDB5C",
+    fontSize: 18,
+    letterSpacing: 2,
+    backgroundColor: "#4897D8"
+};
+
+var SavedArticlesPanel = function SavedArticlesPanel(props) {
+    return _react2.default.createElement(
+        "div",
+        { className: "panel panel-primary", style: panelContainerStyle },
+        _react2.default.createElement(
+            "div",
+            { className: "panel-heading", style: panelHeadingStyle },
+            "Saved Articles"
+        ),
+        _react2.default.createElement(
+            "div",
+            { className: "panel-body" },
+            props.savedArticles.length > 0 ? _react2.default.createElement(_SavedArticlesWell2.default, { savedArticles: props.savedArticles, handleRemoveButton: props.handleRemoveButton }) : _react2.default.createElement(_EmptyWell2.default, null)
+        )
+    );
+};
+
+exports.default = SavedArticlesPanel;
+
+/***/ }),
+/* 71 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var panelRemoveBtn = {
+    float: "right",
+    backgroundColor: "#FFDB5C",
+    color: "#FA6E59",
+    fontSize: 16,
+    paddingLeft: 20,
+    paddingRight: 20,
+    letterSpacing: 2,
+    borderColor: "#4897D8",
+    borderWidth: 2
+};
+
+var panelNumberStyle = {
+    backgroundColor: "#4897D8",
+    color: "#FFDB5C",
+    marginRight: 10
+};
+
+var SavedArticlesWell = function SavedArticlesWell(props) {
+    return props.savedArticles.map(function (data, key) {
+        return _react2.default.createElement(
+            "div",
+            { className: "well" },
+            _react2.default.createElement(
+                "h3",
+                { className: "articleHeadline" },
+                _react2.default.createElement(
+                    "span",
+                    { className: "label label-primary", style: panelNumberStyle },
+                    key + 1
+                ),
+                _react2.default.createElement(
+                    "a",
+                    { href: data.web_url },
+                    _react2.default.createElement(
+                        "strong",
+                        null,
+                        data.headline
+                    )
+                ),
+                _react2.default.createElement(
+                    "button",
+                    { className: "btn btn-primary", style: panelRemoveBtn, onClick: props.handleRemoveButton.bind(null, data._id) },
+                    "Remove"
+                )
+            ),
+            _react2.default.createElement(
+                "h5",
+                null,
+                _react2.default.createElement(
+                    "strong",
+                    null,
+                    "Date Saved:"
+                ),
+                " 02/10/2017"
+            )
+        );
+    });
+};
+
+exports.default = SavedArticlesWell;
+
+/***/ }),
+/* 72 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _axios = __webpack_require__(16);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var API_KEY = "b9f91d369ff59547cd47b931d8cbc56b:0:74623931";
+var BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + API_KEY + "&q=";
+
+// Export an object with a "search" method that searches the Giphy API for the passed query
+exports.default = {
+    search: function search(searchQuery, startYear, endYear) {
+        if (startYear !== 0) {
+            searchQuery += "&begin_date=" + startYear + "0101";
+        }
+        if (endYear !== 0) {
+            searchQuery += "&end_date=" + endYear + "0101";
+        }
+        return _axios2.default.get(BASEURL + searchQuery);
+    }
+};
+
+/***/ }),
+/* 73 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+exports.decode = exports.parse = __webpack_require__(74);
+exports.encode = exports.stringify = __webpack_require__(75);
+
+
+/***/ }),
+/* 74 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+// If obj.hasOwnProperty has been overridden, then calling
+// obj.hasOwnProperty(prop) will break.
+// See: https://github.com/joyent/node/issues/1707
+function hasOwnProperty(obj, prop) {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}
+
+module.exports = function(qs, sep, eq, options) {
+  sep = sep || '&';
+  eq = eq || '=';
+  var obj = {};
+
+  if (typeof qs !== 'string' || qs.length === 0) {
+    return obj;
+  }
+
+  var regexp = /\+/g;
+  qs = qs.split(sep);
+
+  var maxKeys = 1000;
+  if (options && typeof options.maxKeys === 'number') {
+    maxKeys = options.maxKeys;
+  }
+
+  var len = qs.length;
+  // maxKeys <= 0 means that we should not limit keys count
+  if (maxKeys > 0 && len > maxKeys) {
+    len = maxKeys;
+  }
+
+  for (var i = 0; i < len; ++i) {
+    var x = qs[i].replace(regexp, '%20'),
+        idx = x.indexOf(eq),
+        kstr, vstr, k, v;
+
+    if (idx >= 0) {
+      kstr = x.substr(0, idx);
+      vstr = x.substr(idx + 1);
+    } else {
+      kstr = x;
+      vstr = '';
+    }
+
+    k = decodeURIComponent(kstr);
+    v = decodeURIComponent(vstr);
+
+    if (!hasOwnProperty(obj, k)) {
+      obj[k] = v;
+    } else if (isArray(obj[k])) {
+      obj[k].push(v);
+    } else {
+      obj[k] = [obj[k], v];
+    }
+  }
+
+  return obj;
+};
+
+var isArray = Array.isArray || function (xs) {
+  return Object.prototype.toString.call(xs) === '[object Array]';
+};
+
+
+/***/ }),
+/* 75 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+var stringifyPrimitive = function(v) {
+  switch (typeof v) {
+    case 'string':
+      return v;
+
+    case 'boolean':
+      return v ? 'true' : 'false';
+
+    case 'number':
+      return isFinite(v) ? v : '';
+
+    default:
+      return '';
+  }
+};
+
+module.exports = function(obj, sep, eq, name) {
+  sep = sep || '&';
+  eq = eq || '=';
+  if (obj === null) {
+    obj = undefined;
+  }
+
+  if (typeof obj === 'object') {
+    return map(objectKeys(obj), function(k) {
+      var ks = encodeURIComponent(stringifyPrimitive(k)) + eq;
+      if (isArray(obj[k])) {
+        return map(obj[k], function(v) {
+          return ks + encodeURIComponent(stringifyPrimitive(v));
+        }).join(sep);
+      } else {
+        return ks + encodeURIComponent(stringifyPrimitive(obj[k]));
+      }
+    }).join(sep);
+
+  }
+
+  if (!name) return '';
+  return encodeURIComponent(stringifyPrimitive(name)) + eq +
+         encodeURIComponent(stringifyPrimitive(obj));
+};
+
+var isArray = Array.isArray || function (xs) {
+  return Object.prototype.toString.call(xs) === '[object Array]';
+};
+
+function map (xs, f) {
+  if (xs.map) return xs.map(f);
+  var res = [];
+  for (var i = 0; i < xs.length; i++) {
+    res.push(f(xs[i], i));
+  }
+  return res;
+}
+
+var objectKeys = Object.keys || function (obj) {
+  var res = [];
+  for (var key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) res.push(key);
+  }
+  return res;
 };
 
 

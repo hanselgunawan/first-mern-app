@@ -10,12 +10,15 @@ let paddingNone = {
     paddingRight:0
 };
 
-const SavedArticles = () =>
+const SavedArticles = props =>
     <div className="row" style={margin}>
         <div className="col-lg-2">
         </div>
         <div className="col-lg-8" style={paddingNone}>
-            <SavedArticlesPanel/>
+            <SavedArticlesPanel
+                savedArticles={props.savedArticles}
+                handleRemoveButton={props.handleRemoveButton}
+            />
         </div>
         <div className="col-lg-2">
         </div>

@@ -16,13 +16,11 @@ let panelHeadingStyle = {
     backgroundColor:"#4897D8"
 };
 
-let count = 0;
-
-const SavedArticlesPanel = () =>
+const SavedArticlesPanel = props =>
     <div className="panel panel-primary" style={panelContainerStyle}>
         <div className="panel-heading" style={panelHeadingStyle}>Saved Articles</div>
         <div className="panel-body">
-            {count === 0 ? <SavedArticlesWell/> : <EmptyWell/>}
+            {props.savedArticles.length > 0 ? <SavedArticlesWell savedArticles={props.savedArticles} handleRemoveButton={props.handleRemoveButton} /> : <EmptyWell/>}
         </div>
     </div>
 
