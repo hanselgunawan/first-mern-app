@@ -24212,10 +24212,12 @@ var AppContainer = function (_Component) {
                 }
             }).then(function (response) {
                 console.log(response);
+                location.reload();
             });
         }, _this.removeArticle = function (key) {
             _axios2.default.get("/delete?id=" + key + "").then(function (response) {
                 console.log(response);
+                location.reload();
             });
         }, _this.handleSaveButton = function (key) {
             _this.insertNewArticle(key);
@@ -25623,7 +25625,7 @@ var ResultsWell = function ResultsWell(props) {
                     { to: { pathname: '/' } },
                     _react2.default.createElement(
                         "button",
-                        { className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), href: "/", style: panelSaveBtn },
+                        { className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), style: panelSaveBtn },
                         "Save"
                     )
                 )

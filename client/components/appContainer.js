@@ -81,6 +81,7 @@ class AppContainer extends Component {
                 }
             }).then(function (response) {
             console.log(response);
+            location.reload();
         });
     };
 
@@ -88,6 +89,7 @@ class AppContainer extends Component {
         axios.get("/delete?id="+key+"")
             .then(function (response) {
             console.log(response);
+            location.reload();
         });
     };
 
