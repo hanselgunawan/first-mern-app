@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 let panelSaveBtn = {
     float:"right",
@@ -21,7 +22,9 @@ const ResultsWell = props =>
             <div className="well">
                 <h3 className="articleHeadline"><span className="label label-primary" style={panelNumberStyle}>{key+1}</span>
                     <a href={data.web_url} target="_blank"><strong>{data.headline.main}</strong></a>
-                    <button className="btn btn-primary" onClick={props.handleSaveButton.bind(null, key)} style={panelSaveBtn}>Save</button>
+                    <Link to={{pathname: '/'}}>
+                        <button className="btn btn-primary" onClick={props.handleSaveButton.bind(null, key)} href="/" style={panelSaveBtn}>Save</button>
+                    </Link>
                 </h3>
                 <h5><strong>Publication Date:</strong> {data.pub_date ? data.pub_date.substring(0, 10) : "N/A"}</h5>
             </div>

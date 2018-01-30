@@ -23,7 +23,7 @@ const SavedArticlesWell = props =>
             <div className="well">
                 <h3 className="articleHeadline"><span className="label label-primary" style={panelNumberStyle}>{key+1}</span>
                     <a href={data.web_url}><strong>{data.headline}</strong></a>
-                    <button className="btn btn-primary" style={panelRemoveBtn} onClick={props.handleRemoveButton.bind(null, data._id)}>Remove</button>
+                    <button className="btn btn-primary" style={panelRemoveBtn} href="/" onClick={props.handleRemoveButton.bind(null, data._id)}>Remove</button>
                 </h3>
                 <h5><strong>Date Saved:</strong> 02/10/2017</h5>
             </div>
