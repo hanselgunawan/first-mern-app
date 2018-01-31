@@ -22,9 +22,6 @@ class AppContainer extends Component {
     componentDidMount() {
         this.grabArticles("tech", 2000, 2012);
         this.getSavedArticles();
-        this.setState({
-           saveClick:false
-        });
     }
 
     getSavedArticles = () => {
