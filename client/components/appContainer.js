@@ -16,12 +16,16 @@ class AppContainer extends Component {
         savedArticles:[],
         headline:"",
         webUrl:"",
-        dateSaved:""
+        dateSaved:"",
+        saveClick: false
     };
 
     componentDidMount() {
         this.grabArticles("tech", 2000, 2012);
         this.getSavedArticles();
+        this.setState({
+           saveClick:false
+        });
     }
 
     getSavedArticles = () => {
@@ -70,6 +74,7 @@ class AppContainer extends Component {
 
     insertNewArticle = key => {
         let myDate = new Date();
+        let self = this;
         axios.post("/insert",
             querystring.stringify({
                 headline: this.state.results[key].headline.main,
@@ -81,15 +86,16 @@ class AppContainer extends Component {
                 }
             }).then(function (response) {
             console.log(response);
-            location.reload();
+            self.getSavedArticles();
         });
     };
 
     removeArticle = key => {
+        let self = this;
         axios.get("/delete?id="+key+"")
             .then(function (response) {
             console.log(response);
-            location.reload();
+            self.getSavedArticles();
         });
     };
 

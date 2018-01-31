@@ -3117,7 +3117,7 @@ var _routes2 = _interopRequireDefault(_routes);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(
-    _reactRouterDom.HashRouter,
+    _reactRouterDom.BrowserRouter,
     null,
     _react2.default.createElement(_routes2.default, null)
 ), document.getElementById('root'));
@@ -24088,6 +24088,7 @@ var Routes = exports.Routes = function Routes() {
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _appContainer2.default })
     );
 };
+
 exports.default = Routes;
 
 /***/ }),
@@ -24165,7 +24166,8 @@ var AppContainer = function (_Component) {
             savedArticles: [],
             headline: "",
             webUrl: "",
-            dateSaved: ""
+            dateSaved: "",
+            saveClick: false
         }, _this.getSavedArticles = function () {
             _axios2.default.get("/getAll").then(function (res) {
                 return _this.setState({ savedArticles: res.data });
@@ -24202,6 +24204,7 @@ var AppContainer = function (_Component) {
             _this.clearFields();
         }, _this.insertNewArticle = function (key) {
             var myDate = new Date();
+            var self = _this;
             _axios2.default.post("/insert", querystring.stringify({
                 headline: _this.state.results[key].headline.main,
                 web_url: _this.state.results[key].web_url,
@@ -24212,12 +24215,13 @@ var AppContainer = function (_Component) {
                 }
             }).then(function (response) {
                 console.log(response);
-                location.reload();
+                self.getSavedArticles();
             });
         }, _this.removeArticle = function (key) {
+            var self = _this;
             _axios2.default.get("/delete?id=" + key + "").then(function (response) {
                 console.log(response);
-                location.reload();
+                self.getSavedArticles();
             });
         }, _this.handleSaveButton = function (key) {
             _this.insertNewArticle(key);
@@ -24231,6 +24235,9 @@ var AppContainer = function (_Component) {
         value: function componentDidMount() {
             this.grabArticles("tech", 2000, 2012);
             this.getSavedArticles();
+            this.setState({
+                saveClick: false
+            });
         }
     }, {
         key: "render",
@@ -25622,12 +25629,8 @@ var ResultsWell = function ResultsWell(props) {
                 ),
                 _react2.default.createElement(
                     _reactRouterDom.Link,
-                    { to: { pathname: '/' } },
-                    _react2.default.createElement(
-                        "button",
-                        { className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), style: panelSaveBtn },
-                        "Save"
-                    )
+                    { to: "/", className: "btn btn-primary", onClick: props.handleSaveButton.bind(null, key), style: panelSaveBtn },
+                    "Save"
                 )
             ),
             _react2.default.createElement(

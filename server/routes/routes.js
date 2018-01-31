@@ -7,14 +7,19 @@ router.get('/', function(req, res){
 });
 
 router.route('/insert').post(function (req, res) {
-    var nyt = new NYT();
+    let nyt = new NYT();
     nyt.headline = req.body.headline;
     nyt.web_url = req.body.web_url;
     nyt.saved_date = req.body.saved_date;
 
-    nyt.save(function (err) {
-        if(err) res.send(err);
-        res.send('Article successfully added!');
+    NYT.find({headline: req.body.headline}, function (error, result) {
+        if(!result.length)
+        {
+            nyt.save(function (err) {
+                if(err) res.send(err);
+                res.send('Article successfully added!');
+            });
+        }
     });
 });
 
