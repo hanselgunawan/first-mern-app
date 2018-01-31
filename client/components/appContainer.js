@@ -16,8 +16,7 @@ class AppContainer extends Component {
         savedArticles:[],
         headline:"",
         webUrl:"",
-        dateSaved:"",
-        saveClick: false
+        dateSaved:""
     };
 
     componentDidMount() {
