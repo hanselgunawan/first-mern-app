@@ -24166,8 +24166,7 @@ var AppContainer = function (_Component) {
             savedArticles: [],
             headline: "",
             webUrl: "",
-            dateSaved: "",
-            saveClick: false
+            dateSaved: ""
         }, _this.getSavedArticles = function () {
             _axios2.default.get("/getAll").then(function (res) {
                 return _this.setState({ savedArticles: res.data });
@@ -24235,9 +24234,6 @@ var AppContainer = function (_Component) {
         value: function componentDidMount() {
             this.grabArticles("tech", 2000, 2012);
             this.getSavedArticles();
-            this.setState({
-                saveClick: false
-            });
         }
     }, {
         key: "render",
