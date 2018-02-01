@@ -24,6 +24,7 @@
   },
   "scripts": {
     "webpack": "webpack",
-    "start": "npm run webpack && nodemon --exec babel-node -- bin/www"
+    "start": "npm run webpack && nodemon --exec babel-node -- bin/www",
+    "dev": "nodemon --ignore './public/' ./bin/www & nodemon --ignore './public/' --exec 'yarn webpack'"
   }
 }
