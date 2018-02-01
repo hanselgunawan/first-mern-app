@@ -24,7 +24,7 @@ const Header = () =>
         <div className="col-lg-2">
         </div>
         <div className="col-lg-8" style={headerContainerStyle}>
-            <h1 style={headerH1Style}>New York Times Search</h1>
+            <h1 style={headerH1Style}>ARTICLIA</h1>
         </div>
         <div className="col-lg-2">
         </div>
