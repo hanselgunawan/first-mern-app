@@ -23,7 +23,7 @@
     "webpack": "^3.10.0"
   },
   "scripts": {
-    "start": "nodemon --ignore './public/' ./bin/www & nodemon --ignore './public/' --exec 'yarn webpack'",
-    "webpack": "webpack --config webpack.config.js"
+    "webpack": "webpack",
+    "start": "npm run webpack && nodemon --exec babel-node -- bin/www"
   }
 }
