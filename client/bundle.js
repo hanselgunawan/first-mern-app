@@ -25198,7 +25198,7 @@ var Header = function Header() {
             _react2.default.createElement(
                 "h1",
                 { style: headerH1Style },
-                "New York Times Search"
+                "ARTICLIA"
             )
         ),
         _react2.default.createElement("div", { className: "col-lg-2" })
