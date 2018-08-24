@@ -8,6 +8,14 @@
 * Start and end year filter
 * Remove saved articles
 
+## Technology Used
+* React
+* MongoDB
+* Express
+* Node
+* Webpack
+* Heroku
+
 ## User Interface
 ![](https://imgur.com/IUpExg6.png)
 ![](https://imgur.com/W7o52jb.png)
